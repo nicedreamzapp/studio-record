@@ -1,0 +1,7 @@
+customtkinter
+Pillow
+opencv-python
+numpy
+mediapipe
+sounddevice
+flask

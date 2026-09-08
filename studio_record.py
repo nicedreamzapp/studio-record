@@ -789,13 +789,19 @@ class StudioRecordApp:
         self._temp_video = self.outpath.replace('.mp4', '-vtmp.mp4')
         self._temp_audio = self.outpath.replace('.mp4', '-atmp.m4a')
 
-        # Video: pipe processed frames at 30fps (no audio)
+        # Video: pipe processed frames; ffmpeg stamps each frame with the
+        # actual wallclock arrival time, then re-paces to a clean 30 fps CFR
+        # output (duplicating/dropping as needed). Without this, slow capture
+        # frames get stamped at strict 30 fps and visual events drift from
+        # audio whenever the capture loop falls behind.
         vid_cmd = [
             FFMPEG, '-y',
             '-f', 'rawvideo', '-pixel_format', 'bgr24',
-            '-video_size', '1920x1080', '-framerate', '30',
+            '-video_size', '1920x1080',
+            '-use_wallclock_as_timestamps', '1',
             '-i', 'pipe:0',
             '-c:v', 'h264_videotoolbox', '-b:v', '10M',
+            '-fps_mode', 'cfr', '-r', '30',
             self._temp_video
         ]
         self.ffmpeg_proc = subprocess.Popen(

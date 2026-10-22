@@ -6,7 +6,8 @@ In one sentence: it records your screen, your webcam, or both, and lets a script
 
 There are no screenshots or demo video in the repo yet. The whole app is one file, [`studio_record.py`](studio_record.py), and the API below is the quickest way to see it work.
 
-## What it does
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s01-banner-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s01-banner-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s01-banner.svg" width="100%" alt="01. What it does. Screen, face, or both, driven by a script"></picture>
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s01-r1-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s01-r1-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s01-r1.svg" width="100%" alt="Screen + face. Records your screen, your webcam, or both. One curl call. A script can start and stop a recording. Virtual backgrounds. Apple Vision person segmentation on the webcam."></picture>
 
 - **Screen recording**: full display capture at 30 fps through ffmpeg (`avfoundation`), with cursor and clicks, hardware-encoded with `h264_videotoolbox`
 - **Face recording**: webcam saved as 1920x1080, 30 fps, with an optional virtual background (Apple Vision person segmentation)
@@ -16,7 +17,10 @@ There are no screenshots or demo video in the repo yet. The whole app is one fil
 - **Liquid Glass UI**: built with customtkinter
 - **HTTP API**: POST `/start`, POST `/stop`, GET `/status` on `localhost:17494` so any agent can control it
 
-## What I built
+<img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s01-rule.svg" width="100%" alt="">
+
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s02-banner-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s02-banner-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s02-banner.svg" width="100%" alt="02. What I built. Everything lives in one file"></picture>
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s02-r1-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s02-r1-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s02-r1.svg" width="100%" alt="One file. The whole app is studio_record.py. Three modes. Screen, face, and screen plus face."></picture>
 
 Matt Macosko wrote everything in [`studio_record.py`](studio_record.py):
 
@@ -30,14 +34,17 @@ Matt Macosko wrote everything in [`studio_record.py`](studio_record.py):
 
 Upstream tools it relies on (see [CREDITS.md](CREDITS.md)): ffmpeg, Apple Vision (via PyObjC), OpenCV, CustomTkinter, Flask, sounddevice, NumPy, Pillow, and MediaPipe.
 
-## Requirements
+<img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s02-rule.svg" width="100%" alt="">
+
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s03-banner-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s03-banner-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s03-banner.svg" width="100%" alt="03. Install and run. Apple Silicon Mac, Python 3.10+"></picture>
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s03-r1-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s03-r1-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s03-r1.svg" width="100%" alt="Apple Silicon. M1 or later. Python 3.10+. Plus ffmpeg from Homebrew. Permissions. Camera, Microphone and Screen Recording."></picture>
 
 - Apple Silicon Mac (M1 or later)
 - Python 3.10+
 - ffmpeg (`brew install ffmpeg`). The app calls it at `/opt/homebrew/bin/ffmpeg`, which is where Homebrew installs it on Apple Silicon.
 - macOS permissions for your terminal: Camera, Microphone, and Screen Recording
 
-## Setup
+### Setup
 
 ```bash
 git clone https://github.com/nicedreamzapp/studio-record
@@ -52,7 +59,7 @@ mkdir -p ~/Desktop/Screen\ Recordings/backgrounds
 cp backgrounds/* ~/Desktop/Screen\ Recordings/backgrounds/
 ```
 
-## Run
+### Run
 
 ```bash
 .venv/bin/python studio_record.py
@@ -60,7 +67,10 @@ cp backgrounds/* ~/Desktop/Screen\ Recordings/backgrounds/
 
 The window opens AND a Flask API starts on `http://127.0.0.1:17494`.
 
-## HTTP API
+<img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s03-rule.svg" width="100%" alt="">
+
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s04-banner-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s04-banner-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s04-banner.svg" width="100%" alt="04. HTTP API. localhost:17494"></picture>
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s04-r1-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s04-r1-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s04-r1.svg" width="100%" alt="POST /start. Modes: screen, face, screen_face. POST /stop. Waits for the file, returns its path. GET /status. Recording, outpath, mode, duration."></picture>
 
 ```bash
 # Start a recording
@@ -76,15 +86,18 @@ curl "http://127.0.0.1:17494/status"
 
 Recordings are saved to `~/Desktop/Screen Recordings/`.
 
-## Pairing with Claude Code
+### Pairing with Claude Code
 
 Studio Record was built to be driven by [claude-screen-to-phone](https://github.com/nicedreamzapp/claude-screen-to-phone). When paired, you can say things like *"record this and send it to me"* and Claude will start the recording, do the task, stop the recording, and ship the video to your phone via iMessage. That flow lives in the other repo; this repo only provides the recorder and its API.
 
-## Backgrounds
+<img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s04-rule.svg" width="100%" alt="">
+
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s05-banner-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s05-banner-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s05-banner.svg" width="100%" alt="05. Backgrounds and limits. What to know before you use it"></picture>
+<picture><source media="(max-width: 610px), (min-width: 768px) and (max-width: 895px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s05-r1-m.svg"><source media="(max-width: 1149px)" srcset="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s05-r1-mid.svg"><img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s05-r1.svg" width="100%" alt="macOS only. Paths are hard-coded. No auth. The API only listens on 127.0.0.1. No tests. None yet."></picture>
 
 The `backgrounds/` folder contains the virtual background images (Apple wallpapers + abstract gradients) the face-mode segmentation overlays. The app loads them from `~/Desktop/Screen Recordings/backgrounds/` (see Setup). Drop any `.jpg`, `.png`, `.webp` or `.bmp` in that folder to add your own.
 
-## Known limits
+### Known limits
 
 - macOS only. Paths (`/opt/homebrew/bin/ffmpeg`, `~/Desktop/Screen Recordings/`) are hard-coded.
 - Virtual backgrounds need Apple Vision through PyObjC (`pyobjc-framework-Vision`), which is not listed in `requirements.txt`. The code has a MediaPipe fallback, but the MediaPipe segmenter is never created, so that fallback does not run today.
@@ -92,3 +105,5 @@ The `backgrounds/` folder contains the virtual background images (Apple wallpape
 - The API has no auth. It only listens on `127.0.0.1`.
 - Calling `/start` while a recording is running does not start a second one or change the mode.
 - No tests.
+
+<img src="https://raw.githubusercontent.com/nicedreamzapp/studio-record/main/assets/readme/s05-rule.svg" width="100%" alt="">
